@@ -8,5 +8,8 @@ sudo pacman -Sy --needed \
   obsidian \
   htop \
   mono \
+  lazygit \
+  arc-gtk-theme
+
 
 
