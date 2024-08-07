@@ -1,27 +1,62 @@
 #!/bin/bash
 
+source functions.sh
+
 sudo pacman -Sy --needed \
   zsh \
   dotnet-sdk \
   dotnet-runtime \
-  blueman-manager \
+  blueman \
   pavucontrol \
   obsidian \
   htop \
   mono \
   lazygit \
-  arc-gtk-theme
+  arc-gtk-theme \
+  ufw \
+  stow
 
-echo "change shell to zsh by default"
-chsh -s /bin/zsh
-
-echo "Downloading oh-my-posh"
-if command -v yay &> /dev/null
+# Install yay
+if ! command -v yay &> /dev/null
 then
-  yay -S oh-my-posh
+	echo "Installing yay"
+	pacman -S --needed git base-devel
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
+	cd ..
 else
-	echo "Could not install oh-my-posh. Yay is not installed"
+	echo "Skipping, yay already installed"
 fi
 
-echo "";
+# Skip zsh stuff if we have zsh already as a default shell
+if [ "$(basename $SHELL)" != "zsh" ]; then
+  echo "change shell to zsh by default"
+  chsh -s /bin/zsh
+
+  echo "Downloading oh-my-posh"
+  if command -v yay &> /dev/null; then
+    yay -S oh-my-posh
+  fi
+fi
+
+if ask_yes_no "Do you want to stow files?"; then
+  echo "Stowing..."
+else
+  echo "Skipping stowing"
+fi
+
+# TODO Download and install nvim config
+
+# Setup firewall
+echo ""
+echo "Setting up ufw..."
+sudo ufw limit 22/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw enable
+
+echo ""
 echo "Post install completed!"
