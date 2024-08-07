@@ -41,7 +41,9 @@ if [ "$(basename $SHELL)" != "zsh" ]; then
 fi
 
 if ask_yes_no "Do you want to stow files?"; then
-  echo "Stowing..."
+  stow hypr/
+  stow waybar/
+  stow ohmyposh/
 else
   echo "Skipping stowing"
 fi
