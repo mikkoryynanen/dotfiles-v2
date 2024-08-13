@@ -33,9 +33,10 @@ window#waybar {
 }
 
 #cpu,
-#memory
-{
+#memory {
   padding: 0 8px;
   margin: 0;
 }
 
+#language {
+}

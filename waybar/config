@@ -20,11 +20,11 @@
         "clock"
     ],
     "modules-right": [
+        "hyprland/language",
         "mpd", 
          "pulseaudio", 
         // "network", 
         "bluetooth",
-
         "cpu", 
         "memory", 
         // "battery", 

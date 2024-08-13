@@ -65,6 +65,13 @@
         }
     },
 
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "US",
+    "format-fi": "FI",
+    "keyboard-name": "at-translated-set-2-keyboard"
+},
+
     // System tray
     "tray": {
         // "icon-size": 21,
