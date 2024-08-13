@@ -32,3 +32,10 @@ window#waybar {
     background: #000000; 
 }
 
+#cpu,
+#memory
+{
+  padding: 0 8px;
+  margin: 0;
+}
+
