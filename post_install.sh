@@ -4,6 +4,7 @@ source functions.sh
 
 sudo pacman -Sy --needed \
   zsh \
+  tmux \
   dotnet-sdk \
   dotnet-runtime \
   blueman \

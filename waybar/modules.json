@@ -73,9 +73,10 @@
 
     // Clock
     "clock": {
-        // "timezone": "America/New_York",
+        "interval": 60,
+        "tooltip": true,
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%d.%m.%Y}"
     },
 
     // System
@@ -86,13 +87,13 @@
 
     // CPU
     "cpu": {
-        "format": "CPU {usage}% ",
+        "format": "CPU {usage}%",
         "on-click": "alacritty -e htop"
     },
 
     // Memory
     "memory": {
-        "format": "/ RAM {}% ",
+        "format": "RAM {}% ",
         "on-click": "alacritty -e htop"
     },
 
