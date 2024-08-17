@@ -2,7 +2,7 @@
 
 source functions.sh
 
-sudo pacman -Sy --needed \
+sudo pacman -Syu --needed \
   zsh \
   tmux \
   dotnet-sdk \
@@ -15,7 +15,8 @@ sudo pacman -Sy --needed \
   lazygit \
   arc-gtk-theme \
   ufw \
-  stow
+  stow \
+  openrgb
 
 # Install yay
 if ! command -v yay &> /dev/null
