@@ -50,7 +50,7 @@
     "custom/exit": {
         "format": "",
         "tooltip-format": "Powermenu",
-        "on-click": "wlogout -b 3",
+        "on-click": "wlogout -b 4",
         "tooltip": false
     },
 

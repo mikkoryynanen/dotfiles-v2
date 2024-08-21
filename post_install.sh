@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Run this once hyprland is installed
+
+
 source functions.sh
 
 sudo pacman -Syu --needed \
@@ -16,7 +19,9 @@ sudo pacman -Syu --needed \
   arc-gtk-theme \
   ufw \
   stow \
-  openrgb
+  openrgb \
+  hyprlock \
+  hypridle
 
 # Install yay
 if ! command -v yay &> /dev/null

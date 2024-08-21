@@ -4,6 +4,11 @@
     "text" : "Shutdown",
 }
 {
+    "label" : "lock",
+    "action" : "lock",
+    "text" : "Lock",
+}
+{
     "label" : "reboot",
     "action" : "reboot",
     "text" : "Reboot",
